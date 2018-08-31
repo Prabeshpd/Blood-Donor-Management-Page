@@ -1,4 +1,5 @@
 <?php
+    require_once ("baseclass.php");
     class AdminUser extends BaseClass
     {
         protected static $db_table = "admin";
@@ -7,7 +8,7 @@
         public $email;
         public $password;
 
-        public static function verify_user($email,$password)
+        public static function verify_admin_user($email,$password)
         {
             global $database;
             $email = $database->escape_string($email);
