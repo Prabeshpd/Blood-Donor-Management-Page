@@ -5,7 +5,7 @@
         public $connection;
         function __construct()
         {
-            $this->db_connection;
+            $this->db_connection();
         }
         public function db_connection()
         {
@@ -14,7 +14,7 @@
                 die ("unable to connect ". $this->connection->connect_error);
             }
         }
-        public function make_query($sql)
+        public function query($sql)
         {
             $result = $this->connection->query($sql);
             return $result;
