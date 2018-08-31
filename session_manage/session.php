@@ -58,6 +58,4 @@
     }
 
     $session = new Session();
-
-
 ?>
