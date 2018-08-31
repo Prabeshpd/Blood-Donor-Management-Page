@@ -5,7 +5,7 @@
         {
             return static::find_by_query("SELECT * FROM " . static::$db_table . " ");
         }
-        public static function find_by_id()
+        public static function find_by_id($id)
         {
             $the_result_array = static::find_by_query("SELECT * FROM " . static::$db_table . " WHERE id =  $id");
             return !empty($the_result_array) ? array_shift($the_result_array) : false;
@@ -39,7 +39,7 @@
         protected function matching_keys_values_converted_arrays()
         {
             $properties = array();
-            foreach (static::$db_table_fields as $db_field) {
+            foreach (static::$db_fields as $db_field) {
                 if (property_exists($this,$db_field)) {
                     $properties[$db_field] = $this->$db_field;
                 }
