@@ -3,11 +3,33 @@ require_once("init.php"); ?>
 <?php
 $donor = Donor::find_all();?>
 <?php
-    $loc = Donor::location_finder();
-    foreach ($loc as $location => $value){
-        echo "Key=" . ", Value =" .$value;
+    if (isset($_GET['search'])) {
+        $by_address = $_GET['by_address'];
+        $by_blood = $_GET['by_blood'];
+        $arr = array();
+        $donar = Donor::search_donor($by_blood,$by_address);
+       while ($row = mysqli_fetch_array($donar)) {
+           $arr[] =  $row;
+       }
+       foreach ($arr as $a) {
+           echo $a['name'];
+       }
     }
 ?>
+<?php
+    $location = Donor::get_location();
+    $places = array();
+    while ($rows = mysqli_fetch_array($location)) {
+        $places[] = $rows;
+    }
+    $blood_group = Donor::get_blood_group();
+    $blood = array();
+    while ($data = mysqli_fetch_array($blood_group)) {
+        $blood[] = $data;
+    }
+?>
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -29,10 +51,9 @@ $donor = Donor::find_all();?>
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title"><?php echo $don->name; ?></h5>
-                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
+                <h6 class="card-subtitle mb-2 text-muted"><?php echo $don->blood_group; ?></h6>
+                <h6 class="card-subtitle mb-2 text-muted"><?php echo $don->address ?></h6>
+                <a href="#" class="card-link"><?php echo $don->contact_number; ?></a>
             </div>
         </div>
     </div>
@@ -42,36 +63,34 @@ $donor = Donor::find_all();?>
 
     <div class="col-md-4">
         <div class="container">
-            <form action="" method="post">
+            <form action="" method="get">
                 <div class="form-group">
                     <label for="blood-group"> Select Blood Group</label>
-                    <select class="form-control" id="blood-group">
-                        <option>A-Positive-</option>
-                        <option>A-Negative</option>
-                        <option>B-Positive</option>
-                        <option>B-Negative</option>
-                        <option>AB-Positive</option>
-                        <option>AB-Negative</option>
-                        <option>O-Positive</option>
-                        <option>O-Negative</option>
+                    <select class="form-control" id="blood-group" name="by_blood">
+                        <option>Select Blood Group</option>
+                        <?php foreach ($blood as $group): ?>
+                            <option value="<?php echo $group['blood_group'] ?>"><?php echo $group['blood_group']; ?></option>
+                        <?php endforeach; ?>
+
                     </select>
+                </div>
+                <div class="form-group">
+                    <label for="address"> Location </label>
+                    <select class="form-control" id="address" name="by_address">
+                        <option>Location</option>
+                    <?php foreach ($places as $place): ?>
+                        <option value="<?php echo $place['address'] ?>"><?php echo $place['address']; ?></option>
+                    <?php endforeach; ?>
+                    </select>
+                </div>
+                <div>
+                    <button class="btn btn-outline-primary" type="search" value="search" name="search">Search</button>
                 </div>
             </form>
         </div>
     </div>
-    <div class="col-md-4">
-    <div class="container">
-        <form action="" method="post">
-            <div class="form-group">
-                <label for="address"> Location </label>
-                <select class="form-control" id="address">
-                <?php foreach ($loc as $location): ?>
-                    <option><?php echo $location; ?></option>
-                   <?php endforeach; ?>
-                </select>
-            </div>
-        </form>
-    </div>
-    </div>
+
+
+
 </body>
 </html>
