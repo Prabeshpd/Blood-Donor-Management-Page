@@ -58,15 +58,15 @@ $donor = Donor::find_all();?>
                     <a class="nav-link" href="#">Campaigns</a>
                 </li>
             </ul>
-            <div class="pull-right">
-                <a href="login.php" class="btn btn-outline-primary"  role="button">Donate Blood</a>
+            <div style="float:right;">
+                <a href="login.php" class="btn btn-outline-primary"  role="button" style="float: right">Donate Blood</a>
             </div>
         </div>
     </nav>
     <br />
     <div class="container">
-        <div class="container block-2">
-            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 pull-left">
+        <div class="container" >
+            <div class="col-md-4">
                 <form action="" method="get">
                     <div class="form-group">
                         <label for="blood-group"> Select Blood Group</label>
@@ -91,6 +91,7 @@ $donor = Donor::find_all();?>
                     </div>
                     <div>
                         <button class="btn btn-outline-primary" type="search" value="search" name="search">Search</button>
+                        <a href="reset.php" class="btn btn-outline-primary" role="button" style="float: right;">Reset</a>
                     </div>
                 </form>
             </div>

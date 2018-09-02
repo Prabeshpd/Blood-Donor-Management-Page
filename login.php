@@ -3,6 +3,11 @@
 <!DOCTYPE html>
 <?php echo file_get_contents("./Html_file/login.html"); ?>
 
+<?php
+
+echo "<link rel='stylesheet' type='text/css' href='./Css%20File/form.css' />";
+
+?>
 
 
 
