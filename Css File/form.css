@@ -1,0 +1,117 @@
+#design{
+    margin-top: 50px;
+    padding-top: 20px;
+}
+
+#spacing{
+    margin-top: 150px;
+    padding-top: 35px;
+
+}
+
+.style{
+    font-family: "Helvetica Neue";
+    color: cornflowerblue;
+}
+body#LoginForm{
+    background-image: url("Blood-2.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 10px;
+
+}
+.form-heading{
+    margin-top: 50px;
+    color: #fff;
+    font-size: 23px;
+}
+.pannel h2{
+    color: #444444;
+    font-size: 18px;
+    margin: 0 0 8px 0;
+}
+.pannel p{
+    color: #777777;
+    font-size: 14px;
+    margin-bottom: 30px;
+    line-height: 24px;
+}
+.login-form .form-control{
+    background: #f7f7f7 none repeat scroll 0 0;
+    border: 1px solid #d4d4d4;
+    border-radius: 4px;
+    font-size: 14px;
+    height: 50px;
+    line-height: 50px;
+}
+.main-div{
+    background: #ffffff none repeat scroll 0 0;
+    border-radius: 6px;
+    margin: 10px auto 30px;
+    max-width: 38%;
+    padding: 50px 70px 70px 71px;
+
+}
+.login-form .form-group{
+    margin-bottom: 10px;
+}
+.login-form{
+    text-align: center;
+}
+
+.login-form .btn.btn-primary{
+    background: #f0ad4e none repeat scroll 0 0;
+    border-color: #f0ad4e;
+    color: #ffffff;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    padding:0;
+}
+
+.login-form .btn.btn-primary.reset{
+    background: #ff9900 none repeat scroll 0 0;
+}
+.back{
+    text-align: left;
+    margin-top: 10px;
+}
+
+.login-form{
+    margin-top: 60px;
+}
+@media screen and (max-width:900px){
+    body.login-form .main-div {
+        margin: 0;
+    }
+}
+#offset{
+    margin-right: 250px;
+    margin-left: 250px;
+}
+#form-align{
+    margin-left: 250px;
+}
+@media (max-width:900px){
+    #form-align{
+        margin-left: 0;
+    }
+}
+@media (max-width:900px){
+    .login-form{
+        width: 100%;
+    }
+}
+@media (max-width:900px) {
+    .main-div {
+        max-width: 100%;
+        padding: 0 0 0 0;
+    }
+}
+@media (max-width:900px) {
+    .login-form {
+        padding: 0 0 0 0;
+        margin: 0;
+    }
+}
