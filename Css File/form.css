@@ -14,7 +14,7 @@
     color: cornflowerblue;
 }
 body#LoginForm{
-    background-image: url("Blood-2.jpg");
+
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -49,7 +49,7 @@ body#LoginForm{
     background: #ffffff none repeat scroll 0 0;
     border-radius: 6px;
     margin: 10px auto 30px;
-    max-width: 38%;
+    max-width: 75%;
     padding: 50px 70px 70px 71px;
 
 }
@@ -114,4 +114,40 @@ body#LoginForm{
         padding: 0 0 0 0;
         margin: 0;
     }
+}
+#index {
+    width: 100%;
+}
+
+#nav-space {
+    width: 10%;
+}
+#nav-left-space{
+    width: 10%;
+}
+.hover-effect:hover {
+    background-color: #8BB351 !important;
+
+}
+.button-color {
+    background-color: #8BB351 !important; ;
+}
+.style-image {
+    height: 700px !important;
+}
+.parallax {
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: auto;
+}
+#carousel-text {
+    font-size: 18px;
+}
+#carousel-text-hero {
+    color: #000000;
+    font-size: 48px;
+    font-family: Helvetica;
 }
