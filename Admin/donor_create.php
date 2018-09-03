@@ -15,6 +15,7 @@ if (isset($_POST['create_donor'])) {
     $user->contact_number = $contact_number;
     $user->address = $address;
     $user->save_object();
+    redirect("../index.php");
 }
 
 ?>

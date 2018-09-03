@@ -20,4 +20,4 @@
             return !empty($the_result_array) ? array_shift($the_result_array) : false;
         }
     }
-?>
+ ?>

@@ -11,11 +11,7 @@ if(isset($_POST['update_donor'])){
     $address = trim($_POST['address']);
     $id = $_GET['id'];
     $resultt = Donor::update_user($id, $name, $blood_group, $contact_number, $address);
-    if($resultt){
-         redirect("admin.php");
-    }
-    else{
-        echo "failed";
-    }
 
 }
+?>
+
